@@ -1,780 +1,170 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>Fath Rauf Manan</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-    <script>
-        function onload() { $('.i').val(0) }
-        function bulan() {
-            bulan = document.getElementById('#bulan');
-        }
-        function f(a, b) { return Math.floor(a / b) }
-        function int(a) {return parseInt($(a).val())}
-        function fill(a, b) {$(a).val(b)}
-        function cal() {
-
-            let A1 = int('#A1');
-            let A2 = int('#A2');
-            let A3 = int('#A3');
-            let A4 = int('#A4');
-            let A5 = int('#A5');
-            let A6 = int('#A6');
-            let A7 = int('#A7');
-            let A8 = int('#A8');
-            let A9 = int('#A9');
-            let A10 = int('#A10');
-            let A11 = int('#A11');
-            let A12 = int('#A12');
-            let A13 = int('#A13');
-            let A14 = int('#A14');
-            let A15 = int('#A15');
-
-            let B1 = int('#B1');
-            let B2 = int('#B2');
-            let B3 = int('#B3');
-            let B4 = int('#B4');
-            let B5 = int('#B5');
-            let B6 = int('#B6');
-            let B7 = int('#B7');
-            let B8 = int('#B8');
-            let B9 = int('#B9');
-            let B10 = int('#B10');
-            let B11 = int('#B11');
-            let B12 = int('#B12');
-            let B13 = int('#B13');
-            let B14 = int('#B14');
-            let B15 = int('#B15');
-
-            let C1 = int('#C1');
-            let C2 = int('#C2');
-            let C3 = int('#C3');
-            let C4 = int('#C4');
-            let C5 = int('#C5');
-            let C6 = int('#C6');
-            let C7 = int('#C7');
-            let C8 = int('#C8');
-            let C9 = int('#C9');
-            let C10 = int('#C10');
-            let C11 = int('#C11');
-            let C12 = int('#C12');
-            let C13 = int('#C13');
-            let C14 = int('#C14');
-            let C15 = int('#C15');
-
-            let D15 = (A15 + B15 + C15) % 60
-            let D14 = (A14 + B14 + C14 + f((A15 + B15 + C15), 60)) % 30
-            let D13 = (A13 + B13 + C13 + f(A14 + B14 + C14 + f((A15 + B15 + C15), 60), 30)) % 12
-
-            let D12 = (A12 + B12 + C12) % 60
-            let D11 = (A11 + B11 + C11 + f((A12 + B12 + C12), 60)) % 30
-            let D10 = (A10 + B10 + C10 + f(A11 + B11 + C11 + f((A12 + B12 + C12), 60), 30)) % 12
-
-            let D9 = (A9 + B9 + C9) % 60
-            let D8 = (A8 + B8 + C8 + f((A9 + B9 + C9), 60)) % 30
-            let D7 = (A7 + B7 + C7 + f(A8 + B8 + C8 + f((A9 + B9 + C9), 60), 30)) % 12
-
-            let D6 = (A6 + B6 + C6) % 60
-            let D5 = (A5 + B5 + C5 + f((A6 + B6 + C6), 60)) % 30
-            let D4 = (A4 + B4 + C4 + f(A5 + B5 + C5 + f((A6 + B6 + C6), 60), 30)) % 12
-
-            let D3 = (A3 + B3 + C3) % 60
-            let D2 = (A2 + B2 + C2 + f((A3 + B3 + C3), 60)) % 24
-            let D1 = (A1 + B1 + C1 + f(A2 + B2 + C2 + f((A3 + B3 + C3), 60), 24)) % 7
-
-            fill('#D15', D15);
-            fill('#D14', D14);
-            fill('#D13', D13);
-            fill('#D12', D12);
-            fill('#D11', D11);
-            fill('#D10', D10);
-            fill('#D9', D9);
-            fill('#D8', D8);
-            fill('#D7', D7);
-            fill('#D6', D6);
-            fill('#D5', D5);
-            fill('#D4', D4);
-            fill('#D3', D3);
-            fill('#D2', D2);
-            fill('#D1', D1);
-            //MARKAZ
-            $('#E3').val(D15);
-            $('#E2').val(D14);
-            $('#E1').val(D13);
-            //KHOSSOH
-            fill('#F3', D12);
-            fill('#F2', D11);
-            fill('#F1', D10);
-            fill('#H3', D12);
-            fill('#H2', D11);
-            fill('#H1', D10);
-            //HISSOH
-            $('#K3').val(D6);
-            $('#K2').val(D5);
-            $('#K1').val(D4);
-
-        }
-
-        function tadile() {
-            //Satr Awal: E6,E7; Akhir: E8,E9; Kasr: E3
-            let E3 = int('#E3');
-            let E6 = int('#E6');
-            let E7 = int('#E7');
-            let E8 = int('#E8');
-            let E9 = int('#E9');
-            satra = (E6)
-            b = (E8 * 60 + E9)
-            fadl = satra - satrb
-            hasildarb = fadl * E3
-
-            if (satra > satrb) {
-                E12 = 60 - (hasildarb) % 60
-                hasil = satra - Math.floor(hasildarb / 60) - 1
-                E11 = hasil % 60
-                E10 = Math.floor(hasil / 60)
-            } else {
-                E12 = parseInt(hasildarb % 60)
-                hasil = satra + Math.floor(hasildarb / 60)
-                E11 = hasil % 60
-                E10 = Math.floor(hasil / 60)
-            }
-
-            fill('#E12', E12);
-            fill('#E11', E11);
-            fill('#E10', E10);
-
-        }
-
-        function tadilf() {
-            //Satr Awal: E6,E7; Akhir: E8,E9; Kasr: E3
-            let F3 = int('#F3');
-            let F6 = int('#F6');
-            let F7 = int('#F7');
-            let F8 = int('#F8');
-            let F9 = int('#F9');
-            let E12 = int('#E12');
-            let E11 = int('#E11');
-            let E10 = int('#E10');
-            satra = (F6 * 60 + F7)
-            satrb = (F8 * 60 + F9)
-            fadl = satra - satrb
-            hasildarb = fadl * F3
-
-            if (satra > satrb) {
-                F12 = 60 - (hasildarb) % 60
-                hasil = satra - Math.floor(hasildarb / 60) - 1
-                F11 = hasil % 60
-                F10 = Math.floor(hasil / 60)
-            } else {
-                F12 = parseInt(hasildarb % 60)
-                hasil = satra + Math.floor(hasildarb / 60)
-                F11 = hasil % 60
-                F10 = Math.floor(hasil / 60)
-            }
-
-            $('#F12').val(F12);
-            $('#F11').val(F11);
-            $('#F10').val(F10);
-
-            //Bagian G
-            //Bud Muthlaq
-            let G4 = (E12 + F12) % 60
-            let G3 = (E11 + F11 + f((E12 + F12), 60)) % 60
-            let G2 = (E10 + F10 + f(E11 + F11 + f((E12 + F12), 60), 60)) % 30
-
-            fill('#G4', G4);
-            fill('#G3', G3);
-            fill('#G2', G2);
-
-            //Tadil Syams
-            T5 = (G4 * 5) % 60
-            if (T5 > 45) {
-                T4 = Math.floor(G4 * 5 / 60) + (G3 * 5) % 60 + 1
-            } else {
-                T4 = Math.floor(G4 * 5 / 60) + (G3 * 5) % 60
-            }
-            T3 = Math.floor(G3 * 5 / 60) + (G2 * 5) % 60
-            T2 = Math.floor(G2 * 5 / 60)
-
-            let G8 = (E12 + T4) % 60
-            let G7 = (E11 + T3 + f((E12 + T4), 60)) % 60
-            let G6 = (E10 + T2 + f(E11 + T3 + f((E12 + T4), 60), 60)) % 30
-
-            fill('#G8', G8);
-            fill('#G7', G7);
-            fill('#G6', G6);
-
-            //Muqowwam Syams (Wasat Syams-Ta'dil Syams)
-
-            let D7 = int('#D7');
-            let D8 = int('#D8');
-            let D9 = int('#D9');
-            wasat = D7 * 1800 + D8 * 60 + D9 - 1
-            parttadil = G6 * 60 + G7
-            //TELL ME I NEED FIXING
-            let G12 = 60 - G8
-            let G11 = (wasat - parttadil) % 60
-            let G10 = (E10 + T2 + f(E11 + T3 + f((E12 + T4), 60), 60)) % 30
-            let G9 = 0
-
-
-            let I1 = int('#I1');
-            let I2 = int('#I2');
-            let I3 = int('#I3');
-            fill('#G12', G12);
-            fill('#G11', G11);
-            fill('#G10', G10);
-            fill('#I3', G12);
-            fill('#I2', G11);
-            fill('#I1', G10);
-
-        }
-
-        function tadilh() {
-            //Satr Awal: E6,E7; Akhir: E8,E9; Kasr: E3
-            let H3 = int('#H3');
-            let H6 = int('#H6');
-            let H7 = int('#H7');
-            let H8 = int('#H8');
-            let H9 = int('#H9');
-            satra = (H6 * 60 + H7)
-            satrb = (H8 * 60 + H9)
-            fadl = Math.abs(satra - satrb)
-            hasildarb = fadl * H3
-
-            if (satra > satrb) {
-                H12 = 60 - (hasildarb) % 60
-                hasil = satra - Math.floor(hasildarb / 60) - 1
-                H11 = hasil % 60
-                H10 = Math.floor(hasil / 60)
-            } else {
-                H12 = parseInt(hasildarb % 60)
-                hasil = satra + Math.floor(hasildarb / 60)
-                H11 = hasil % 60
-                H10 = Math.floor(hasil / 60)
-            }
-
-            fill('#H12', H12);
-            fill('#H11', H11);
-            fill('#H10', H10);
-
-        }
-        function tadili() {
-            //Satr Awal: E6,E7; Akhir: E8,E9; Kasr: E3
-            let I2 = int('#I2');
-            let I3 = int('#I3');
-            let I6 = int('#I6');
-            let I7 = int('#I7');
-            let I8 = int('#I8');
-            let I9 = int('#I9');
-            satra = (H6 * 60 + H7)
-            satrb = (H8 * 60 + H9)
-            fadl = Math.abs(satra - satrb)
-            hasildarb = fadl * H3
-
-            if (satra > satrb) {
-                H12 = 60 - (hasildarb) % 60
-                hasil = satra - Math.floor(hasildarb / 60) - 1
-                H11 = hasil % 60
-                H10 = Math.floor(hasil / 60)
-            } else {
-                H12 = parseInt(hasildarb % 60)
-                hasil = satra + Math.floor(hasildarb / 60)
-                H11 = hasil % 60
-                H10 = Math.floor(hasil / 60)
-            }
-
-            fill('#H12', H12);
-            fill('#H11', H11);
-            fill('#H10', H10);
-
-        }
-
-        function tadilk() {
-            //Satr Awal: E6,E7; Akhir: E8,E9; Kasr: E3
-            let K3 = int('#K3');
-            let K6 = int('#K6');
-            let K7 = int('#K7');
-            let K8 = int('#K8');
-            let K9 = int('#K9');
-            satra = (K6 * 60 + K7)
-            satrb = (K8 * 60 + K9)
-            fadl = satra - satrb
-            hasildarb = fadl * K3
-
-            if (satra > satrb) {
-                K12 = 60 - (hasildarb) % 60
-                hasil = satra - Math.floor(hasildarb / 60) - 1
-                K11 = hasil % 60
-                K10 = Math.floor(hasil / 60)
-            } else {
-                K12 = parseInt(hasildarb % 60)
-                hasil = satra + Math.floor(hasildarb / 60)
-                K11 = hasil % 60
-                K10 = Math.floor(hasil / 60)
-            }
-
-            T5 = (K12 * 4) % 60
-            if (T5 > 45) {
-                T4 = Math.floor(K12 * 4 / 60) + (K11 * 4) % 60 + 1
-            } else {
-                T4 = Math.floor(K12 * 4 / 60) + (K11 * 4) % 60
-            }
-            T3 = Math.floor(K11 * 4 / 60) + (K10 * 4) % 60
-            T2 = Math.floor(K10 * 4 / 60)
-
-            fill('#K13', T5);
-            fill('#K12', T4);
-            fill('#K11', T3);
-            fill('#K10', T2);
-        }
-    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sundial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <style>
+        * {
+            font-family: 'Lato';
+        }
+
         body {
-            margin: 10px;
+            margin: 0;
+            overflow-y: hidden;
+            background-color: rgb(40, 34, 66);
         }
 
-        .s1 {
-            width: 33px;
-            border: 1px solid black;
+        #myPaint {
+            border: 2px solid rgb(234, 202, 255);
+            margin-left: 20px;
+            margin-top: 10px;
         }
 
-        .calc2 {
-            width: 70px;
-            border: 0px;
-            color: white;
-            background-color: teal;
-            text-align: center;
+        main {
+            display: flex;
+            justify-content: flex-start;
         }
 
-        .lm,
-        .d {
-            color: black;
-            background-color: white;
+        input {
+            width: 60px;
+
         }
 
-        #t3 {
-            float: left;
-            height: 200px;
-            width: 150;
-            background-color: cadetblue;
+        aside {
+            padding: 10px 20px 0 20px;
+            flex: 0 0 130px;
+            background-color: hsl(253, 100%, 82%);
+            text-overflow: unset;
+            height: 100vh;
         }
 
-        .nb {
-            border: 0px;
-        }
-
-        .lm,
-        .ll,
-        .calc1 {
-            border: 0px;
+        .sec {
             width: 120px;
-            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
         }
 
-        /*Label Medium-size*/
-
-        .ll {
-            width: 200px;
-        }
-
-        .calc1 {
-            width: 566px;
-            background-color: teal;
+        button {
+            width: 120px;
+            margin-bottom: 5px;
+            border: 0;
+            border-radius: 2px;
             color: white;
+            background-color: rgb(127, 0, 211);
+            padding: 10px 0 10px 0;
         }
 
-        .table41 {
-            border: 1px solid black;
+        button:hover {
+            background-color: rgb(84, 8, 155);
+        }
+
+        h3 {
+            font-size: 13px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            margin-top: 0;
         }
     </style>
+
 </head>
 
-<body onload="onload()">
-    <h1 class="title">Fath Rauf Manan</h1>
-    <h1 class="subtitle is-7">Book's Author: Abu Hamdan Abd. Jalil bin Abd. Hamid</h1>
-    <hr>
-    <div class="columns">
-        <div class="column">
-            <h5>Bulan</h5>
-            <select id="bulan" onchange="bulan()">
-                <option value="">Muharram</option>
-                <option value="">Safar</option>
-                <option value="">Rabiul Awal</option>
-                <option value="">Rabiul Akhir</option>
-                <option value="">Jumadil Awal</option>
-                <option value="">Jumadil Akhir</option>
-                <option value="">Rajab</option>
-                <option value="">Syaban</option>
-                <option value="">Romadhon</option>
-                <option value="">Syawal</option>
-                <option value="">Dulqa'dah</option>
-                <option value="">Dulhijjah</option>
-            </select>
-        </div>
-        <div class="column">
-            <h5>Tahun</h5>
-            <input type="number" name="" id="tahun" min="0" max="1999">
-        </div>
-    </div>
-    <hr>
-    <input type="text" class="ll d" value="Sn. Majmu'ah" disabled>
-    <input type="text" class="s1 i" id="A1">
-    <input type="text" class="s1 i" id="A2">
-    <input type="text" class="s1 i" id="A3">-
-    <input type="text" class="s1 i" id="A4">
-    <input type="text" class="s1 i" id="A5">
-    <input type="text" class="s1 i" id="A6">-
-    <input type="text" class="s1 i" id="A7">
-    <input type="text" class="s1 i" id="A8">
-    <input type="text" class="s1 i" id="A9">-
-    <input type="text" class="s1 i" id="A10">
-    <input type="text" class="s1 i" id="A11">
-    <input type="text" class="s1 i" id="A12">-
-    <input type="text" class="s1 i" id="A13">
-    <input type="text" class="s1 i" id="A14">
-    <input type="text" class="s1 i" id="A15"><br>
+<body>
+    <main>
+        <aside>
+            <h2>Sundial</h2>
+            <div class="sec">
+                <label>φ</label>
+                <input type="number" id="lintang">
+            </div>
+            <div class="sec">
+                <label>HA</label>
+                <input type="number" id="ha">
 
-    <input type="text" class="ll d" value="Sn. Mabsuthah" disabled>
-    <input type="text" class="s1 i" id="B1">
-    <input type="text" class="s1 i" id="B2">
-    <input type="text" class="s1 i" id="B3">-
-    <input type="text" class="s1 i" id="B4">
-    <input type="text" class="s1 i" id="B5">
-    <input type="text" class="s1 i" id="B6">-
-    <input type="text" class="s1 i" id="B7">
-    <input type="text" class="s1 i" id="B8">
-    <input type="text" class="s1 i" id="B9">-
-    <input type="text" class="s1 i" id="B10">
-    <input type="text" class="s1 i" id="B11">
-    <input type="text" class="s1 i" id="B12">-
-    <input type="text" class="s1 i" id="B13">
-    <input type="text" class="s1 i" id="B14">
-    <input type="text" class="s1 i" id="B15"><br>
+            </div>
+            <div class="sec">
+                <label>δ</label>
+                <input type="number" id="dec">
+            </div><br>
+            <button onclick="cal()">Cal</button><br>
+            <button onclick="cle()">Clear</button>
+            <div class="sec">
 
-    <input type="text" class="ll d" value="Syahr Tam" disabled>
-    <input type="text" class="s1 i" id="C1">
-    <input type="text" class="s1 i" id="C2">
-    <input type="text" class="s1 i" id="C3">-
-    <input type="text" class="s1 i" id="C4">
-    <input type="text" class="s1 i" id="C5">
-    <input type="text" class="s1 i" id="C6">-
-    <input type="text" class="s1 i" id="C7">
-    <input type="text" class="s1 i" id="C8">
-    <input type="text" class="s1 i" id="C9">-
-    <input type="text" class="s1 i" id="C10">
-    <input type="text" class="s1 i" id="C11">
-    <input type="text" class="s1 i" id="C12">-
-    <input type="text" class="s1 i" id="C13">
-    <input type="text" class="s1 i" id="C14">
-    <input type="text" class="s1 i" id="C15"><br>
+                <h3 id="Alt">Alt: --</h3>
+                <h3 id="Az">Az: --</h3>
+            </div>
+        </aside>
+        <section>
+            <canvas id="myPaint" width="640" height="640"></canvas>
+        </section>
+    </main>
 
-    <input type="button" value="" class="ll" disabled>
-    <input type="button" value="Calc" class="calc1" onclick="cal()"><br>
-    <input type="text" class="ll d" value="Majmu" disabled>
-    <input type="text" class="s1 d" id="D1" disabled>
-    <input type="text" class="s1 d" id="D2" disabled>
-    <input type="text" class="s1 d" id="D3" disabled>-
-    <input type="text" class="s1 d" id="D4" disabled>
-    <input type="text" class="s1 d" id="D5" disabled>
-    <input type="text" class="s1 d" id="D6" disabled>-
-    <input type="text" class="s1 d" id="D7" disabled>
-    <input type="text" class="s1 d" id="D8" disabled>
-    <input type="text" class="s1 d" id="D9" disabled>-
-    <input type="text" class="s1 d" id="D10" disabled>
-    <input type="text" class="s1 d" id="D11" disabled>
-    <input type="text" class="s1 d" id="D12" disabled>-
-    <input type="text" class="s1 d" id="D13" disabled>
-    <input type="text" class="s1 d" id="D14" disabled>
-    <input type="text" class="s1 d" id="D15" disabled><br>
-    <hr>
+    <script>
 
-    <div class="columns">
-        <div class="column table41">
-            <b>Ta'dil Markaz</b><br>
-            <input type="text" class="lm" value="" disabled>
-            <input disabled type="text" class="s1 nb d" value="ج">
-            <input disabled type="text" class="s1 nb d" value="جة">
-            <input disabled type="text" class="s1 nb d" value="قة">
-            <input disabled type="text" class="s1 nb d" value="ني">
-            <input disabled type="text" class="s1 nb d" value="لث">
-            <br>
-            <input type="text" class="lm" value="Markaz" disabled>
-            <input type="text" class="s1" id="E1" disabled>
-            <input type="text" class="s1" id="E2" disabled>
-            <input type="text" class="s1" id="E3" disabled>
-            <input type="text" class="s1" id="E4" disabled>
-            <input type="text" class="s1" id="E5" disabled><br>
+        var canvas = document.getElementById("myPaint");
+        var ctx = canvas.getContext("2d")
+        ctx.font = "30px monospace"
+        ctx.fillStyle="rgb(234, 202, 255)"
+        ctx.fillText("B", 0, 332);
+        ctx.fillText("U", 311, 25);
+        ctx.fillText("T", 620, 332);
+        ctx.fillText("S", 311, 620);
+        ctx.beginPath();
 
-            <input type="text" class="lm" value="Satar Awwal" disabled>
-            <input type="text" class="s1 nb">
-            <input type="text" class="s1 i" id="E6">
-            <input type="text" class="s1 i" id="E7"><br>
+        function cal() {
+            var lin = document.getElementById("lintang").value * Math.PI / 180;
+            var ha = document.getElementById("ha").value * Math.PI / 180 * -1;
+            var dec = document.getElementById("dec").value * Math.PI / 180;
 
-            <input type="text" class="lm" value="Satar Tsani" disabled>
-            <input type="text" class="s1 nb">
-            <input type="text" class="s1 i" id="E8">
-            <input type="text" class="s1 i" id="E9">
-            <input type="button" class="s1 calc2" id="F4" value="Calc" onclick="tadile()"><br>
+            alt = Math.asin(Math.sin(dec) * Math.sin(lin) + Math.cos(dec) * Math.cos(lin) * Math.cos(ha))
+            az = Math.asin(-1 * Math.sin(ha) * Math.cos(dec) / Math.cos(alt))
+            document.getElementById("Alt").innerHTML = "Alt: " + (Math.round((alt * 180 / Math.PI) * 100) / 100)
+            document.getElementById("Az").innerHTML = "Az: " + (Math.round((az * 180 / Math.PI) * 100) / 100)
 
-            <input type="text" class="lm" value="Ta'dil Markaz" disabled>
-            <input type="text" class="s1 nb">
-            <input type="text" class="s1" id="E10">
-            <input type="text" class="s1" id="E11">
-            <input type="text" class="s1" id="E12">
-            <input type="text" class="s1" id="E13">
-        </div>
+            //canvas
+            var canvas = document.getElementById("myPaint");
+            var ctx = canvas.getContext("2d")
+            ctx.moveTo(320, 320);
+            var tngkt = 100;
+            //tan alt=tngkt/bayang
+            //byng=1/tan alt
+            var byg = tngkt / Math.tan(alt);
 
+            //x
+            //sin Az=x/byng
+            //x=byng.sinAz
+            var x = byg * Math.sin(az);
 
+            //Y
+            //cos Az=y/byng
+            //y=byng.cos Az
+            var y = byg * Math.cos(az)
 
-        <div class="column table41">
-            <b>Ta'dil Khoshoh</b><br>
-            <input type="text" class="lm" value="" disabled>
-            <input type="text" class="s1 nb d" disabled value="ج">
-            <input type="text" class="s1 nb d" disabled value="جة">
-            <input type="text" class="s1 nb d" disabled value="قة">
-            <input type="text" class="s1 nb d" disabled value="ني">
-            <input type="text" class="s1 nb d" disabled value="لث">
-            <br>
-            <input type="text" class="lm" value="Khoshoh" disabled>
-            <input type="text" class="s1" id="F1" disabled>
-            <input type="text" class="s1" id="F2" disabled>
-            <input type="text" class="s1" id="F3" disabled>
-            <input type="text" class="s1" id="F4" disabled>
-            <input type="text" class="s1" id="F5" disabled><br>
+            ctx.lineTo(320 + x, 320 + y);
+            ctx.strokeStyle = 'rgb(234, 202, 255)'
+            ctx.stroke();
+        }
 
-            <input type="text" class="lm" value="Satar Awwal" disabled>
-            <input type="text" class="s1 nb">
-            <input type="text" class="s1 i" id="F6">
-            <input type="text" class="s1 i" id="F7"><br>
-
-            <input type="text" class="lm" value="Satar Tsani" disabled>
-            <input type="text" class="s1 nb">
-            <input type="text" class="s1 i" id="F8">
-            <input type="text" class="s1 i" id="F9">
-            <input type="button" class="s1 calc2" id="F4" value="Calc" onclick="tadilf()"><br>
-
-            <input type="text" class="lm" value="Ta'dil Khoshoh" disabled>
-            <input type="text" class="s1 nb">
-            <input type="text" class="s1" id="F10">
-            <input type="text" class="s1" id="F11">
-            <input type="text" class="s1" id="F12">
-            <input type="text" class="s1" id="F13">
-        </div>
-
-
-        <div class="column table41">
-            <input type="text" class="lm" value="" disabled>
-            <input type="text" class="s1 nb d" disabled value="ج">
-            <input type="text" class="s1 nb d" disabled value="جة">
-            <input type="text" class="s1 nb d" disabled value="قة">
-            <input type="text" class="s1 nb d" disabled value="ني">
-            <br>
-            <input type="text" class="lm t" id="r4" value="Bu'd Muthlaq" disabled>
-            <input type="text" class="s1" id="G1" disabled>
-            <input type="text" class="s1" id="G2" disabled>
-            <input type="text" class="s1" id="G3" disabled>
-            <input type="text" class="s1" id="G4" disabled><br>
-
-            <input type="text" class="lm t" id="r4" value="Ta'dil Syams" disabled>
-            <input type="text" class="s1" id="G5" disabled>
-            <input type="text" class="s1" id="G6" disabled>
-            <input type="text" class="s1" id="G7" disabled>
-            <input type="text" class="s1" id="G8" disabled><br>
-
-            <input type="text" class="lm t" id="r4" value="Muqowwam Syams" disabled>
-            <input type="text" class="s1" id="G9" disabled>
-            <input type="text" class="s1" id="G10" disabled>
-            <input type="text" class="s1" id="G11" disabled>
-            <input type="text" class="s1" id="G12" disabled><br>
-        </div>
-    </div>
-    <hr>
-
-    <div class="columns">
-        <div class="column table41">
-            <b>Hishoh Sa'ah</b><br>
-            <input type="text" class="lm" value="" disabled>
-            <input type="text" class="s1 nb d" disabled value="ج">
-            <input type="text" class="s1 nb d" disabled value="جة">
-            <input type="text" class="s1 nb d" disabled value="قة">
-            <input type="text" class="s1 nb d" disabled value="ني">
-            <input type="text" class="s1 nb d" disabled value="لث">
-            <br>
-            <input type="text" class="lm t" value="Khoshoh" disabled>
-            <input type="text" class="s1" id="H1" disabled>
-            <input type="text" class="s1" id="H2" disabled>
-            <input type="text" class="s1" id="H3" disabled>
-            <input type="text" class="s1" id="H4" disabled>
-            <input type="text" class="s1" id="H5" disabled><br>
-
-            <input type="text" class="lm t" value="Satar Awwal" disabled>
-            <input type="text" class="s1 nb t">
-            <input type="text" class="s1 i" id="H6">
-            <input type="text" class="s1 i" id="H7"><br>
-
-            <input type="text" class="lm t" value="Satar Tsani" disabled>
-            <input type="text" class="s1 nb t">
-            <input type="text" class="s1 i" id="H8">
-            <input type="text" class="s1 i" id="H9">
-            <input type="button" class="s1 calc2" id="F4" value="Calc" onclick="tadilh()"><br>
-
-            <input type="text" class="lm t" value="Hishoh Sa'ah" disabled>
-            <input type="text" class="s1 nb t">
-            <input type="text" class="s1" id="H10">
-            <input type="text" class="s1" id="H11">
-            <input type="text" class="s1" id="H12">
-            <input type="text" class="s1" id="H13">
-        </div>
-
-
-
-        <div class="column table41">
-            <b>Ta'dil Ayyam</b><br>
-            <input type="text" class="lm t" value="" disabled>
-            <input type="text" class="s1 nb d" disabled value="ج">
-            <input type="text" class="s1 nb d" disabled value="جة">
-            <input type="text" class="s1 nb d" disabled value="قة">
-            <input type="text" class="s1 nb d" disabled value="ني">
-            <input type="text" class="s1 nb d" disabled value="لث">
-            <br>
-            <input type="text" class="lm t" value="Muqowwam Syams" disabled>
-            <input type="text" class="s1" id="I1" disabled>
-            <input type="text" class="s1" id="I2" disabled>
-            <input type="text" class="s1" id="I3" disabled>
-            <input type="text" class="s1" id="I4" disabled>
-            <input type="text" class="s1" id="I5" disabled><br>
-
-            <input type="text" class="lm t" value="Satar Awwal" disabled>
-            <input type="text" class="s1 nb">
-            <input type="text" class="s1 i" id="I6">
-            <input type="text" class="s1 i" id="I7"><br>
-
-            <input type="text" class="lm t" value="Satar Tsani" disabled>
-            <input type="text" class="s1 nb t">
-            <input type="text" class="s1 i" id="I8">
-            <input type="text" class="s1 i" id="I9">
-            <input type="button" class="s1 calc2" value="Calc" onclick="tadili()"><br>
-
-            <input type="text" class="lm t" value="Ta'dil Ayyam" disabled>
-            <input type="text" class="s1 nb t">
-            <input type="text" class="s1" id="I10">
-            <input type="text" class="s1" id="I11">
-            <input type="text" class="s1" id="I12">
-            <input type="text" class="s1" id="I13">
-        </div>
-
-
-        <div class="column table41">
-            <input type="text" class="lm t" value="" disabled>
-            <input type="text" class="s1 nb d" disabled value="ج">
-            <input type="text" class="s1 nb d" disabled value="جة">
-            <input type="text" class="s1 nb d" disabled value="قة">
-            <input type="text" class="s1 nb d" disabled value="ني">
-            <br>
-            <input type="text" class="lm t" id="r4" value="Bu'd Muadal" disabled>
-            <input type="text" class="s1" id="J1" disabled>
-            <input type="text" class="s1" id="J2" disabled>
-            <input type="text" class="s1" id="J3" disabled>
-            <input type="text" class="s1" id="J4" disabled><br>
-
-            <input type="text" class="lm t" id="r4" value="Ta'dil Alamah" disabled>
-            <input type="text" class="s1" id="J5" disabled>
-            <input type="text" class="s1" id="J6" disabled>
-            <input type="text" class="s1" id="J7" disabled>
-            <input type="text" class="s1" id="J8" disabled><br>
-
-            <input type="text" class="lm t" id="r4" value="Alamah Muaddalah" disabled>
-            <input type="text" class="s1" id="J9" disabled>
-            <input type="text" class="s1" id="J10" disabled>
-            <input type="text" class="s1" id="J11" disabled>
-            <input type="text" class="s1" id="J12" disabled><br>
-        </div>
-    </div>
-    <hr>
-    <div class="columns">
-        <div class="column table41">
-            <b>'Ardl Qomar</b><br>
-            <input type="text" class="lm t" value="" disabled>
-            <input type="text" class="s1 nb d" disabled value="ج">
-            <input type="text" class="s1 nb d" disabled value="جة">
-            <input type="text" class="s1 nb d" disabled value="قة">
-            <input type="text" class="s1 nb d" disabled value="ني">
-            <input type="text" class="s1 nb d" disabled value="لث">
-            <br>
-            <input type="text" class="lm t" value="Hishoh" disabled>
-            <input type="text" class="s1" id="K1" disabled>
-            <input type="text" class="s1" id="K2" disabled>
-            <input type="text" class="s1" id="K3" disabled>
-            <input type="text" class="s1" id="K4" disabled>
-            <input type="text" class="s1" id="K5" disabled><br>
-
-            <input type="text" class="lm t" value="Satar Awwal" disabled>
-            <input type="text" class="s1 nb t">
-            <input type="text" class="s1 i" id="K6">
-            <input type="text" class="s1 i" id="K7"><br>
-
-            <input type="text" class="lm t" value="Satar Tsani" disabled>
-            <input type="text" class="s1 nb t">
-            <input type="text" class="s1 i" id="K8">
-            <input type="text" class="s1 i" id="K9">
-            <input type="button" class="s1 calc2" value="Calc" onclick="tadilk()"><br>
-
-            <input type="text" class="lm t" value="Daq. 'Ard Qomar" disabled>
-            <input type="text" class="s1 nb t">
-            <input type="text" class="s1" id="K10">
-            <input type="text" class="s1" id="K11">
-            <input type="text" class="s1" id="K12">
-            <input type="text" class="s1" id="K13">
-        </div>
-
-        <div class="column table41">
-            <input type="text" class="lm t" value="" disabled>
-            <input type="text" class="s1 nb d" disabled value="ج">
-            <input type="text" class="s1 nb d" disabled value="جة">
-            <input type="text" class="s1 nb d" disabled value="قة">
-            <input type="text" class="s1 nb d" disabled value="ني">
-            <br>
-            <input type="text" class="lm t" id="r4" value="Irtifa Hilal" disabled>
-            <input type="text" class="s1" id="L1" disabled>
-            <input type="text" class="s1" id="L2" disabled>
-            <input type="text" class="s1" id="L3" disabled>
-            <input type="text" class="s1" id="L4" disabled><br>
-
-            <input type="text" class="lm t" id="r4" value="Mukts Hilal" disabled>
-            <input type="text" class="s1" id="L5" disabled>
-            <input type="text" class="s1" id="L6" disabled>
-            <input type="text" class="s1" id="L7" disabled>
-            <input type="text" class="s1" id="L8" disabled><br>
-
-            <input type="text" class="lm t" id="r4" value="Qous Nur Hilal" disabled>
-            <input type="text" class="s1" id="L9" disabled>
-            <input type="text" class="s1" id="L10" disabled>
-            <input type="text" class="s1" id="L11" disabled>
-            <input type="text" class="s1" id="L12" disabled><br>
-        </div>
-
-    </div>
-    <hr>
-    <b>Kesimpulan</b>
-    <div class="columns">
-        <div class="column">
-            <h5>Awal Bulan</h5>
-            <h5>adalah hari: </h5>
-            <h5>Ijtima terjadi pada :</h5>
-            <h5>pukul: </h5>
-            <h5>Ketinggian Hilal: </h5>
-            <h5>Lama Hilal bisa dilihat: </h5>
-            <h5>Besar Lengkungan Hilal: </h5>
-        </div>
-        <div class="column">
-            <h5>Arah Hilal: </h5>
-            <h5>Hilal </h5>
-            <h5>Berada pada manzilah: </h5>
-            <h5>Dari bintang: </h5>
-        </div>
-    </div>
+        function cle() {
+            var canvas = document.getElementById("myPaint");
+            var ctx = canvas.getContext("2d")
+            ctx.clearRect(0, 0, 640, 640);
+            ctx.font = "30px monospace"
+            ctx.fillText("B", 0, 332);
+            ctx.fillText("U", 311, 25);
+            ctx.fillText("T", 620, 332);
+            ctx.fillText("S", 311, 620);
+            ctx.beginPath();
+        }
+    </script>
 </body>
 
 </html>
